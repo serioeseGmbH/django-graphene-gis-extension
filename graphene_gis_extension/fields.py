@@ -61,3 +61,31 @@ def register_field_conversions():
         scalar=scalars.PointScalar,
         description="A GEOS Point object with x/y/srid, sent/received as WKT"
     )
+
+    register_model_and_form_fields(
+        gis_models.PolygonField,
+        gis_forms.PolygonField,
+        scalar=scalars.PolygonScalar,
+        description="A GEOS Polygon object with a list of x/y/srid, sent/received as WKT"
+    )
+
+    register_model_and_form_fields(
+        gis_models.MultiPolygonField,
+        gis_forms.MultiPolygonField,
+        scalar=scalars.MultiPolygonScalar,
+        description="A GEOS MultiPolygonField object with a list of lists of x/y/srid, sent/received as WKT"
+    )
+
+    register_model_and_form_fields(
+        gis_models.LineStringField,
+        gis_forms.LineStringField,
+        scalar=scalars.LineStringScalar,
+        description="A GEOS LineStringField object with a list of x/y/srid, sent/received as WKT"
+    )
+
+    register_model_and_form_fields(
+        gis_models.MultiLineStringField,
+        gis_forms.MultiLineStringField,
+        scalar=scalars.MultiLineStringScalar,
+        description="A GEOS MultiLineStringScalar object with a list of lists of x/y/srid, sent/received as WKT"
+    )
